@@ -15,7 +15,7 @@ from models import *
 from utils import progress_bar
 
 
-parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
+parser = argparse.ArgumentParser(description='PyTorch CVHN Training')
 parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
 parser.add_argument('--resume', '-r', action='store_true',
                     help='resume from checkpoint')
@@ -26,7 +26,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 best_acc = 0  # best test accuracy
 start_epoch = 0  # start from epoch 0 or last checkpoint epoch
 
-# Data, We are using CIFAR10 dataset. We are trasforming these data. those data, we are storing in root. we traing only in traing dataset, so train = False in test dataset 
+# Data, We are using SVHN dataset. We are trasforming these data. those data, we are storing in root. we traing only in traing dataset, so train = False in test dataset 
 print('==> Preparing data..')
 transform_train = transforms.Compose([
     transforms.RandomCrop(32, padding=4), # data augumentation = RandomCrop() = crop the image at random location
